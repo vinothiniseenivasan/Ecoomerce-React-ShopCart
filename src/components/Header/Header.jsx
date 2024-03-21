@@ -15,6 +15,7 @@ import {
 } from 'reactstrap';
 // css
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 
 function Header( props )
@@ -27,7 +28,11 @@ function Header( props )
   return (
     <div className="container">
       <Navbar {...props } >
-        <NavbarBrand href="/"  id="title"> ShopCart  </NavbarBrand>
+        <NavbarBrand  id="title"> 
+
+        <Link to ="/">   ShopCart   </Link>
+       
+         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ms-auto" navbar>
