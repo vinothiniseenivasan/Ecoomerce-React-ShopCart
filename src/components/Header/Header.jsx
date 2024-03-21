@@ -37,7 +37,7 @@ function Header( props )
               <DropdownToggle nav caret>
                 Options
               </DropdownToggle>
-              <DropdownMenu right>
+              <DropdownMenu end>
                 <DropdownItem>Cart</DropdownItem>
                 <DropdownItem>setttingd</DropdownItem>
                 <DropdownItem divider />

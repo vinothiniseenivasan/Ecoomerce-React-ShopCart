@@ -1,7 +1,7 @@
 function CategoryItem({ itemName }) 
 {
     return (
-        <div class="category-item d-flex align-items-center justify-content-center">
+        <div className="category-item d-flex align-items-center justify-content-center">
             <a href="productList.html"> {itemName} </a>
         </div>
 
