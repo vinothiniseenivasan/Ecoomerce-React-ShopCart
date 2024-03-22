@@ -40,7 +40,10 @@ useEffect(() =>
 
                     <CategoryItem  itemName="All Products"  />
 
-                   { categories &&  categories.map((eachCategory) =>  <CategoryItem  itemName={eachCategory}  key={eachCategory }/>)}
+                   { categories &&  categories.map((eachCategory) =>  <CategoryItem  
+                   itemName={eachCategory} 
+                    key={eachCategory }
+                    filter={eachCategory}  />)}
 
 
 

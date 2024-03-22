@@ -5,24 +5,32 @@ import ProductBox from '../../components/ProductBox/ProductBox';
 import FilterProduct from '../../components/FilterProduct/FilterProduct';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useSearchParams } from 'react-router-dom';
 
 function ProductList() {
 
 
     const [productList ,setProductList]  = useState(null);
 
-    async function getAllProducts()
+    const [query] =useSearchParams();
+
+    async function getAllProducts(category)
     {
-        const response = await axios.get('https://fakestoreapi.com/products');
-        console.log(response.data);
-        setProductList(response.data)
+
+        const downloadUrl = category ? `https://fakestoreapi.com/products/category/${category}` :  `https://fakestoreapi.com/products`;
+        const response = await axios.get(downloadUrl);
+        // console.log(response.data);
+        setProductList(response.data);
+        
 
     }
 
     useEffect(() =>{
-        getAllProducts();
+        getAllProducts(query.get("category"));
+        console.log("query",query.get("category"));
 
-    } );
+
+    } ,[] );
     return (
         <div className='container'>
             <div className='row'>
