@@ -3,6 +3,7 @@ import Error from "../pages/Error/Error";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import ProductList from "../pages/ProductList/ProductList";
+import ProductDetails from "../pages/ProductDetails/ProductDetails";
 function MainRoutes()
 {
 
@@ -11,6 +12,7 @@ function MainRoutes()
              <Route   path= "/"   element ={ <Home />}/>
              <Route    path= "*"   element ={ <Error />} />
              <Route    path= "/products"   element ={ <ProductList />} /> 
+             <Route    path= "/products/:id"   element ={ <ProductDetails />} /> 
 
 
         </Routes>

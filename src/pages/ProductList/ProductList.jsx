@@ -10,6 +10,8 @@ function ProductList() {
             <div className='row'>
                 <h2 className="product-list-title text-center">All Products</h2>
                 <div className="product-list-wrapper d-flex flex-row">
+
+                     
                     <FilterProduct />
 
 
@@ -20,7 +22,7 @@ function ProductList() {
                           <ProductBox   ProductImage={ProductImage} name={"items"}  price={"1000"}/>
                         
                     </div>
-                </div>
+                </div>  
             </div>
             ProductList
         </div>

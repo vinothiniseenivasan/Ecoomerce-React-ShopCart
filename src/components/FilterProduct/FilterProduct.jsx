@@ -44,14 +44,6 @@ function FilterProduct()
                         minPriceOptions.map((optionValue)  => <option key={optionValue} value={optionValue}> {optionValue} </option>)
                     }
 
-
-
-                    {/* <option value="0">0</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                    <option value="200">200</option> */}
                 </select>
             </div>
             <div className="form-group">
@@ -59,15 +51,8 @@ function FilterProduct()
 
                 {
                         maxPriceOptions.map((optionValue)  => <option key={optionValue} value={optionValue}> {optionValue} </option>)
-                    }
-
-                    {/* <option value="0">0</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                    <option value="200">200</option>
-                    <option value="1000">1000</option> */}
+                }
+ 
                 </select>
             </div>
         </div>
