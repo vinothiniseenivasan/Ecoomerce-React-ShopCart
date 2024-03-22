@@ -1,11 +1,36 @@
 // css imports
 
+import { useEffect, useState } from 'react';
 import CategoryItem from '../../components/CategoryItem/CategoryItem';
 import './Home.css';
+import axios from 'axios';
+import getAllCategories from '../../fakeApI/FakeStoreApi';
+
+
 
 
 
 function Home() {
+
+    const [categories ,setCategories] =useState(null);
+async function downloadCategories()
+{
+    const response = await axios.get(getAllCategories());
+    console.log(response.data);
+    setCategories(response.data);
+
+}
+
+
+
+useEffect(() =>
+{
+    downloadCategories();
+
+} , []);   
+
+
+
     return (
         <div className="container welcome-wrapper">
             <div className="row">
@@ -14,6 +39,8 @@ function Home() {
                     {/* <!-- List of categories --> */}
 
                     <CategoryItem  itemName="All Products"  />
+
+                   { categories &&  categories.map((eachCategory) =>  <CategoryItem  itemName={eachCategory}  key={eachCategory }/>)}
 
 
 
