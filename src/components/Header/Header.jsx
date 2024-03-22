@@ -44,9 +44,11 @@ function Header( props )
               </DropdownToggle>
               <DropdownMenu end>
                 <DropdownItem>Cart</DropdownItem>
-                <DropdownItem>setttingd</DropdownItem>
+                <DropdownItem>settting</DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem>Reset</DropdownItem>
+                <DropdownItem>
+                 <Link to="/signin">  Logout </Link> 
+                  </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavbarText>UserName</NavbarText>
