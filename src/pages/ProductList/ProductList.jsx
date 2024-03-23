@@ -19,18 +19,23 @@ function ProductList() {
 
         const downloadUrl = category ? `https://fakestoreapi.com/products/category/${category}` :  `https://fakestoreapi.com/products`;
         const response = await axios.get(downloadUrl);
-        // console.log(response.data);
+        console.log("inside product list " , response.data);
         setProductList(response.data);
         
 
     }
 
-    useEffect(() =>{
+    useEffect(  () =>
+         {
         getAllProducts(query.get("category"));
         console.log("query",query.get("category"));
+     //  if query param changes its re-render
+          } ,[query.get("category")] );
 
 
-    } ,[] );
+
+
+          
     return (
         <div className='container'>
             <div className='row'>

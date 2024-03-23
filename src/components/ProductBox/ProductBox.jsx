@@ -8,7 +8,7 @@
 
         <  Link to="/products/2"
         href="productDetails.html" 
-        className="product-item text-decoration-none "   >
+        className="product-item text-decoration-none"   >
                                 <div className="product-img">
                                     <img src={ProductImage } alt=""/>
                                 </div>

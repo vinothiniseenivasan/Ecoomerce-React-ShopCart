@@ -1,8 +1,38 @@
+import { useEffect, useState } from 'react';
 import './FilterProduct.css';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 function FilterProduct()
 {
+    const [categories ,setCategories] = useState(null);
+
+  
+    async function downloadCategories()
+    {
+
+        const response = await axios.get(`https://fakestoreapi.com/products/categories`);
+        setCategories( response.data);
+        console.log(" category response.data"  , response.data);
+
+    }
+
+    const navigate = useNavigate();
+    function handleCategoryNavigate(category )
+    {
+        // going to productList page
+        
+        navigate(`/products?category=${category}`)
+
+    }
+  
+
+    useEffect(() =>
+    {
+        downloadCategories();
+
+    } ,[])
 
 
     const minPriceOptions = [0 ,10 ,20,50,100, 200];
@@ -20,18 +50,15 @@ function FilterProduct()
     <div id="categoryList d-flex flex-column">
         {/* <!-- will be populated by JS --> */} 
 
-        <a  className='d-flex text-decoration-none'>
-            Electronics
-        </a>
-        <a  className='d-flex text-decoration-none'>
-           KitchenWare
-        </a>
-        <a  className='d-flex text-decoration-none'>
-          Medicine
-        </a>
-        <a  className='d-flex text-decoration-none'>
-            Electronics
-        </a>
+        {
+            categories && categories.map(    (eachCategory) => 
+            // Electrnics , jwellery , men renderinf=g sidebar
+             <a onClick={ () => handleCategoryNavigate(eachCategory)  } key={eachCategory} className='d-flex text-decoration-none'>
+               {eachCategory}
+            </a>      )
+        }
+
+       
     </div>
 
 

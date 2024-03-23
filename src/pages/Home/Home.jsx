@@ -43,7 +43,7 @@ useEffect(() =>
                    { categories &&  categories.map((eachCategory) =>  <CategoryItem  
                    itemName={eachCategory} 
                     key={eachCategory }
-                    filter={eachCategory}  />)}
+                    filter={eachCategory}   />)}
 
 
 
