@@ -26,7 +26,7 @@ function ProductList() {
     }
 
     useEffect(  () =>
-         {
+         {  
         getAllProducts(query.get("category"));
         console.log("query",query.get("category"));
      //  if query param changes its re-render
@@ -35,7 +35,7 @@ function ProductList() {
 
 
 
-          
+
     return (
         <div className='container'>
             <div className='row'>
@@ -55,7 +55,9 @@ function ProductList() {
                                key={eachProduct.title}   
                                ProductImage={eachProduct.image} 
                                name={eachProduct.title} 
-                               price={eachProduct.price}/>)    }
+                               price={eachProduct.price}
+                               id = {eachProduct.id}
+                               />)    }
                           
                         
                     </div>

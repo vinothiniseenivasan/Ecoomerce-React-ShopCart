@@ -1,15 +1,42 @@
+import { useEffect, useState } from 'react';
 import './ProductDetails.css'
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 
 function ProductDetails()
 { 
+    const {id} =  useParams();
+
+
+    useEffect(() =>
+    {
+        getParticularProduct();
+    } ,[])
+    const   [  product ,setProduct  ] = useState(null);
+
+    async function getParticularProduct()
+    {
+
+    const response  =await axios.get(`https://fakestoreapi.com/products/${id}`);
+    console.log("ProductDetails api"  , response.data);
+    setProduct(response.data)
+    }
+
+    
+
+
+
+
+
     return(
+        product && 
         <div className="container">
         <div className="row">
             <div className="product-details-wrapper d-flex justify-content-between align-items-start flex-row">
                 <div className="product-img d-flex">
                     <img 
-                      src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+                      src= {product.image}
                       alt="product image" 
                       id="product-img"
                     />
@@ -18,10 +45,10 @@ function ProductDetails()
                 <div className="product-details-box d-flex flex-column"> 
                     <div id="productDetails">
                         {/* <!-- product details --> */}
-                        <div className="product-name" id="product-name">Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</div>
-                        <div className="product-price fw-bold" id="product-price">109.95</div>
+                        <div className="product-name" id="product-name">{product.title}</div>
+                        <div className="product-price fw-bold" id="product-price">${product.price}</div>
                         <div className="product-description">
-                            <div className="product-description-title fw-bold">Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday</div>
+                            <div className="product-description-title fw-bold">{product.description}</div>
                             <div className="product-description-data" id="product-description-data">
                                
                             </div>

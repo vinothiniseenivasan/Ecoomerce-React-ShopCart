@@ -2,14 +2,15 @@
  import { Link } from 'react-router-dom'; 
  
  
- function ProductBox({ProductImage , name , price})
+ function ProductBox({ProductImage , name , price , id})
  {
     return(
-
-        <  Link to="/products/2"
+        // id of particular product
+        
+        <  Link to={    `/products/${id}`   }
         href="productDetails.html" 
         className="product-item text-decoration-none"   >
-                                <div className="product-img">
+                                 <div className="product-img">
                                     <img src={ProductImage } alt=""/>
                                 </div>
                                 <div className="product-name text-center">{name}</div>
