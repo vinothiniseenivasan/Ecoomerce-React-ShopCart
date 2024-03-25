@@ -13,6 +13,8 @@ import getAllCategories from '../../fakeApI/FakeStoreApi';
 function Home() {
 
     const [categories ,setCategories] =useState(null);
+
+    
 async function downloadCategories()
 {
     const response = await axios.get(getAllCategories());

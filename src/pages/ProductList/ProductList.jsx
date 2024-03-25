@@ -17,7 +17,7 @@ function ProductList() {
     async function getAllProducts(category)
     {
 
-        const downloadUrl = category ? `https://fakestoreapi.com/products/category/${category}` :  `https://fakestoreapi.com/products`;
+        const downloadUrl = category ? `${import.meta.env.VITE_FAKE_STORE_URL}/products/category/${category}` :  `${import.meta.env.VITE_FAKE_STORE_URL}/products`;
         const response = await axios.get(downloadUrl);
         console.log("inside product list " , response.data);
         setProductList(response.data);

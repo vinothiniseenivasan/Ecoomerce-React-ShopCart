@@ -18,11 +18,11 @@ function ProductDetails()
     async function getParticularProduct()
     {
 
-    const response  =await axios.get(`https://fakestoreapi.com/products/${id}`);
+    const response  =await axios.get(`${import.meta.env.VITE_FAKE_STORE_URL}/products/${id}`);
     console.log("ProductDetails api"  , response.data);
     setProduct(response.data)
     }
-
+ 
     
 
 
