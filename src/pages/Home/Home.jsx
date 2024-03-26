@@ -4,9 +4,7 @@ import { useEffect, useState } from 'react';
 import CategoryItem from '../../components/CategoryItem/CategoryItem';
 import './Home.css';
 import axios from 'axios';
-import getAllCategories from '../../fakeApI/FakeStoreApi';
-
-
+import { getAllCategories } from '../../fakeApI/FakeStoreApi';
 
 
 

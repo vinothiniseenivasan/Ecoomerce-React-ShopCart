@@ -1,12 +1,22 @@
- import './ProductBox.css';
- import { Link } from 'react-router-dom'; 
+ import { useEffect } from 'react';
+import './ProductBox.css';
+ import { Link, useParams } from 'react-router-dom'; 
  
  
  function ProductBox({ProductImage , name , price , id})
  {
+    
+
+    useEffect(() =>
+    {
+
+    } ,[])
+
+
+
     return(
         // id of particular product
-        
+
         <  Link to={    `/products/${id}`   }
         href="productDetails.html" 
         className="product-item text-decoration-none"   >

@@ -14,7 +14,7 @@ function Login()
         <div className="login-wrapper" id="loginForm">
             <h4 className="text-center">Login</h4>
               
-             <Auth />
+             <Auth   onSubmit={  (formDetails) => {   console.log("formDetails in login" ,formDetails)}  }/>
 
 
             <div className="signup-btn text-center" id="showSignupBtn">
@@ -22,7 +22,7 @@ function Login()
                 </div>
             
         </div>
-    </div>
+    </div> 
 );
 }
 

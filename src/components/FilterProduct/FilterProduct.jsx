@@ -13,7 +13,8 @@ function FilterProduct()
     {
 
         const response = await axios.get(`https://fakestoreapi.com/products/categories`);
-        setCategories( response.data);
+        setCategories( response.data );
+
         console.log(" category response.data"  , response.data);
 
     }
@@ -22,7 +23,7 @@ function FilterProduct()
     function handleCategoryNavigate(category )
     {
         // going to productList page
-        
+
         navigate(`/products?category=${category}`)
 
     }
